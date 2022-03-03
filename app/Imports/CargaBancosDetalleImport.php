@@ -19,11 +19,11 @@ class CargaBancosDetalleImport implements ToModel
     {
         return new CargaBancosDetalle([
             'carga_bancos_id'=> $this->fkey,
-            'fecha'     => $row[1],
-           'descripcion'    => $row[0], 
+            'fecha'     => is_null($row[1])? "": $row[1]  , 
+           'descripcion'    => is_null($row[0])? "": $row[0]  , 
            'cargo'    => is_null($row[2])? 0: $row[2]  , 
-           'abono'    => $row[3], 
-           'saldo'    => $row[4], 
+           'abono'    => is_null($row[3])? 0: $row[3]  ,
+           'saldo'    =>is_null($row[4])? 0: $row[4]  ,
         ]);
     }
 }

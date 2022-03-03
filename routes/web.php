@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BancoController;
+use App\Http\Controllers\cargaBancosController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,6 @@ Route::get('/', function () {
 Route::get('/bancos', [BancoController::class, 'index'])->name('bancos.index');
 Route::post('/bancos/carga', [BancoController::class, 'carga'])->name('cargabancos');
 Route::post('/bancos/store', [BancoController::class, 'store'])->name('guardaRegistroBancos');
+
+Route::get('/cargaBancos', [cargaBancosController::class, 'index'])->name('cargaBancos');
+
