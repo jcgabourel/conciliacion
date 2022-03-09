@@ -34,3 +34,6 @@ Route::get('/detalleCargaBancos/{id}',[detalleCargaBancosController::class, 'ind
 
 
 
+Route::view('/sample', 'dashboard.homepage');
+
+
